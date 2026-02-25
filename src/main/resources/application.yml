@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_api_courses
+    username: admin
+    password: admin
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret: mysecretkey
+  expiration: 3600000
+
