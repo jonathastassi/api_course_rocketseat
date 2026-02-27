@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_api_courses
-    username: admin
-    password: admin
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
   
   jpa:
     hibernate:
@@ -12,3 +12,26 @@ jwt:
   secret: mysecretkey
   expiration: 3600000
 
+sonarcude: sqp_b7961e01aeffd425ca41b5ef4abcec956fb5694d
+
+management:
+  endpoints:
+    access:
+      default: read-only
+    web:
+      exposure:
+        include:
+        - health
+        - metrics
+        - prometheus  
+  endpoint:
+    health:
+      show-details: always    
+      show-components: always  
+    metrics:
+      access: unrestricted
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+    
